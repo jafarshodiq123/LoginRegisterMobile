@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Percobaan2</string>
+    <string name="logusername">Username</string>
+    <string name="logPassword">Password</string>
+    <string name="Reqfullnama">Full Nama</string>
+    <string name="Requsername">Username</string>
+    <string name="Reqtanggallahir">Tanggal Lahir</string>
+    <string name="Reqemail">Email</string>
+    <string name="Reqpassword">Password</string>
+    <string name="Reqkonfirmasi">Confirm Pasword</string>
+    <string name="Reqgender">Gender</string>
+    <string name="Reqnohp">No Hp</string>
+    <string name="Reqalamat">Alamat</string>
+    <string name="Reqbtn">Register</string>
+    <string-array name="gender_array">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+        <item>Lainnya</item>
+    </string-array>
+    <string name="Main_image_description">Main_image_description</string>
+</resources>
