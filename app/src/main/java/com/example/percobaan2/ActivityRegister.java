@@ -95,8 +95,14 @@ public class ActivityRegister extends AppCompatActivity {
                 if (strpassword.equals(strkonfirm)) {
                     Toast.makeText(ActivityRegister.this, "anda berhasil register "
                             + "fullname :" + strfullname + "\n" +
+                            "username :" + strusername + "\n" +
                             "tanggal lahir :" + strtglhir + "\n" +
-                            "Email :" + stremail + "\n" , Toast.LENGTH_LONG).show();
+                            "Email :" + stremail + "\n" +
+                            "Password :" + strpassword + "\n" +
+                            "Confirmpasword :" + strkonfirm + "\n" +
+                            "gender:" + strgender + "\n" +
+                            "No Hp :" + strhp + "\n" +
+                            "Almat:" + stralmat, Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(ActivityRegister.this, "password anda salah", Toast.LENGTH_SHORT).show();
                 }

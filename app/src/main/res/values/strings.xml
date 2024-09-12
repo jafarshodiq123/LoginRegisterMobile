@@ -17,5 +17,26 @@
         <item>Perempuan</item>
         <item>Lainnya</item>
     </string-array>
+    <string-array name="daftar_mhs">
+        <item>holed led</item>
+        <item>akram junaidi</item>
+        <item>soli boy</item>
+        <item>reyo arya</item>
+        <item>deden sandika</item>
+        <item>sagita github</item>
+        <item>lukman hanfi</item>
+        <item>ilham hambali</item>
+        <item>dendi satrio</item>
+        <item>ali mubarok</item>
+        <item>yek arab </item>
+        <item>roy kiyosi</item>
+        <item>akbar maulud</item>
+        <item>mavir a</item>
+        <item>tyo oyoy</item>
+        <item>fiqo oke</item>
+
+    </string-array>
+
+
     <string name="Main_image_description">Main_image_description</string>
 </resources>

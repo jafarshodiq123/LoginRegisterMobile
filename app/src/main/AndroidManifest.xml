@@ -13,19 +13,25 @@
         android:theme="@style/Theme.Percobaan2"
         tools:targetApi="31">
 
-        <!-- ActivityRegister diatur sebagai activity utama -->
+        <!-- MainActivity diatur sebagai activity utama -->
         <activity
-            android:name=".ActivityRegister"
+            android:name=".MainActivity"
             android:exported="true">
         </activity>
+
+        <!-- ActivityRegister -->
+        <activity
+            android:name=".ActivityRegister"
+            android:exported="false" />
+
         <!-- ActivityLogin -->
         <activity
             android:name=".ActivityLogin"
-            android:exported="true" />
+            android:exported="false" />
 
-        <!-- MainActivity -->
+        <!-- listMHSActivity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".listMHSActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,4 +39,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
