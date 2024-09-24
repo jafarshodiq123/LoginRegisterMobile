@@ -53,6 +53,7 @@ public class ActivityRegister extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("email", stremail);
                     editor.putString("password", strpassword);
+                    editor.putString("fullname", strfullname);
                     editor.apply();
 
                     Toast.makeText(ActivityRegister.this, "Registration successful", Toast.LENGTH_SHORT).show();

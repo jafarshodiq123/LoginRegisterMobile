@@ -13,10 +13,11 @@
         android:theme="@style/Theme.Percobaan2"
         tools:targetApi="31">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".MahasiswaActivity"
-            android:exported="true">
-        </activity>
-        <!-- MainActivity diatur sebagai activity utama -->
+            android:exported="true"></activity> <!-- MainActivity diatur sebagai activity utama -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -25,15 +26,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity> <!-- ActivityRegister -->
         <activity
             android:name=".ActivityRegister"
             android:exported="false" /> <!-- ActivityLogin -->
         <activity
             android:name=".ActivityLogin"
-            android:exported="false" /> <!-- listMHSActivity -->
-
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -38,4 +38,6 @@
     </string-array>
 
     <string name="Main_image_description">Main_image_description</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

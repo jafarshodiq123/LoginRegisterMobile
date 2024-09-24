@@ -1,5 +1,6 @@
 package com.example.percobaan2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityLogin extends AppCompatActivity {
@@ -48,19 +50,22 @@ public class ActivityLogin extends AppCompatActivity {
                 //manampung data dari register
                 String registeredEmail = sharedPreferences.getString("email", "");
                 String registeredPassword = sharedPreferences.getString("password", "");
+                String registeredFullname = sharedPreferences.getString("fullname", "");
+
 
                 if (emailInput.equals(registeredEmail) && passwordInput.equals(registeredPassword)) {
                     Toast.makeText(ActivityLogin.this, "Login successful", Toast.LENGTH_SHORT).show();
 
-                    // Redirect to home or dashboard activity
-                    Intent intent = new Intent(ActivityLogin.this, MahasiswaActivity.class);
+                    Intent intent = new Intent(ActivityLogin.this, DashboardActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
+                    showInvalidLoginDialog();
                     Toast.makeText(ActivityLogin.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,5 +74,20 @@ public class ActivityLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    private void showInvalidLoginDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Login Failed")
+                .setMessage("Email atau password salah. Apakah Anda ingin melanjutkan ke daftar siswa?")
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(ActivityLogin.this, MahasiswaActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton("Tidak", null)
+                .show();
     }
 }
