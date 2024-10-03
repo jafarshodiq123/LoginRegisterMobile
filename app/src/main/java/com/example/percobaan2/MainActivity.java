@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the ActivityLogin after the delay
-                Intent intent = new Intent(MainActivity.this, ActivityLogin.class);
+                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 finish(); // Finish MainActivity so it's removed from the back stack
             }
-        }, 3000); // 3000 milliseconds = 3 seconds
+        }, 6000); // 3000 milliseconds = 3 seconds
     }
 }

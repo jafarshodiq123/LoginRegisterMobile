@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_home"
-        android:icon="@drawable/hp"
-        android:title="Home" />
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/baseline_account_box_24"
+        android:title="Profile" />
     <item
         android:id="@+id/nav_dashboard"
-        android:icon="@drawable/baseline_support_agent_24"
+        android:icon="@drawable/alamat"
         android:title="Dashboard" />
     <item
         android:id="@+id/nav_notifications"

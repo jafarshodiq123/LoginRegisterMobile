@@ -5,12 +5,29 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView"
+    <!-- LinearLayout dengan orientasi horizontal untuk ImageView dan EditText -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <!-- ImageView -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_man_24"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp" />
 
+        <!-- EditText -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Some text here"/>
 
+    </LinearLayout>
 
+    <!-- TextView -->
 </LinearLayout>

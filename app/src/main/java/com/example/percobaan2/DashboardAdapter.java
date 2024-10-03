@@ -41,6 +41,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
         public ViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
+
         }
     }
 }

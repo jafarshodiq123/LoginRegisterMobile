@@ -16,10 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityLogin extends AppCompatActivity {
 
-    EditText emailLogin, Passwordlogin;
-    Button BtnLogin;
-    TextView textView;
-    SharedPreferences sharedPreferences;
+//    menginialisasi eleemen dan id yang ada di xml
+        EditText emailLogin, Passwordlogin;
+        Button BtnLogin;
+        TextView textView;
+        SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,45 +28,42 @@ public class ActivityLogin extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        // Initialize views
+        //meginisialisai id yang ada di xml disimpan ke variabel
         emailLogin = findViewById(R.id.email_login);
         Passwordlogin = findViewById(R.id.login_password);
         BtnLogin = findViewById(R.id.btn_login);
         textView = findViewById(R.id.loreqId);
 
-        // Initialize SharedPreferences
+        // menginisialisasi Sharpreference untuk mengambil dan menyimpandata yang ada di register
         sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
 
-        // manampilkan data yang sudah terdaftar akanditampilkan di emaillogin atau editteknya
+        // manampilkan datadan menyimpan data yang sudah terdaftar akanditampilkan di emaillogin atau editteknya
         String savedEmail = sharedPreferences.getString("email", "");
         emailLogin.setText(savedEmail);
-
         BtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String emailInput = emailLogin.getText().toString().trim();
                 String passwordInput = Passwordlogin.getText().toString().trim();
-
                 // Fetch stored email and password
-                //manampung data dari register
+
+
+                //untuk mengambil data yang sudah ditampung sebelumnya
                 String registeredEmail = sharedPreferences.getString("email", "");
                 String registeredPassword = sharedPreferences.getString("password", "");
                 String registeredFullname = sharedPreferences.getString("fullname", "");
-
-
+                //mengecek jika data sama akan diarahkan ke dashboard
                 if (emailInput.equals(registeredEmail) && passwordInput.equals(registeredPassword)) {
-                    Toast.makeText(ActivityLogin.this, "Login successful", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(ActivityLogin.this, "Login sukses", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ActivityLogin.this, DashboardActivity.class);
                     startActivity(intent);
                     finish();
-                } else {
+                } else {//jika salah
                     showInvalidLoginDialog();
-                    Toast.makeText(ActivityLogin.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityLogin.this, "invalid email dan pasword", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,20 +72,18 @@ public class ActivityLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+    }//alert untuk sesion jika salah amaka akan diarahkan ke pilihan
     private void showInvalidLoginDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Login Failed")
-                .setMessage("Email atau password salah. Apakah Anda ingin melanjutkan ke daftar siswa?")
-                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                .setTitle("Login Gagal")
+                .setMessage("Email atau password salah")
+                .setPositiveButton("back", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(ActivityLogin.this, MahasiswaActivity.class);
+                        Intent intent = new Intent(ActivityLogin.this, ActivityLogin.class);
                         startActivity(intent);
                         finish();
                     }
-                })
-                .setNegativeButton("Tidak", null)
-                .show();
+                });
     }
 }
