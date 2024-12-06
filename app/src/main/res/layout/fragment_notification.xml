@@ -17,6 +17,13 @@
         android:layout_height="wrap_content"
         android:text="text"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout"
+        android:text="logout">
+
+    </Button>
     <TextView
         android:id="@+id/text_notifikasi"
         android:layout_width="wrap_content"
